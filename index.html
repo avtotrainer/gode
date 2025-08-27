@@ -6,7 +6,7 @@
     <title>ᲞᲝᲠᲢᲤᲝᲚᲘᲝᲔᲑᲘ</title>
     <meta
       name="description"
-      content="საზაფხულო სკოლის მონაწილეთა პორტფოლიო-გვერდების სარჩევი QR კოდებით."
+      content="2025 წლის აგვისტოში, გოდერძიზე ტექნოლოგიების საზაფხულო სკოლის მონაწილეთა პორტფოლიო-გვერდების სარჩევი QR კოდებით."
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="favicon.ico" />
@@ -16,8 +16,10 @@
     <header>
       <div class="container">
         <nav>
-          <div class="logo">📚 პორტფოლიოების სარჩევი</div>
-          <div style="color: #9aa6bb">საზაფხულო სკოლა</div>
+          <div class="logo">📚 ᲞᲝᲠᲢᲤᲝᲚᲘᲝᲔᲑᲘᲡ ᲡᲐᲠᲩᲔᲕᲘ</div>
+          <div style="color: #9aa6bb">
+            ᲡᲐᲖᲐᲤᲮᲣᲚᲝ ᲡᲙᲝᲚᲐ ᲒᲝᲓᲔᲠᲫᲘᲖᲔ, ᲐᲒᲕᲘᲡᲢᲝ, 2025 Წ.
+          </div>
         </nav>
       </div>
     </header>
@@ -26,8 +28,8 @@
       <div class="container">
         <h1>სტუდენტების პორტფოლიოები</h1>
         <p class="lead">
-          ქვემოთ ნახავთ ყველა შექმნილი ერთგვერდიანი საიტის ბმულს. მოძებნე
-          სახელი/ელ-ფოსტა/ბმული, და სკანირებისთვის გამოიყენე QR.
+          ქვემოთ ნახავთ საზაფხულო სკოლაში შექმნილ საიტების ბმულებს. სანახავად
+          გადადი შესაბამის ბმულზე დაასკანერე QR კოდი.
         </p>
 
         <!-- Tools -->
@@ -36,13 +38,13 @@
             🔎
             <input
               id="q"
-              placeholder="ძებნა: სახელი, გვარი, ელფოსტა, github…"
+              placeholder="ᲫᲔᲑᲜᲐ: ᲡᲐᲮᲔᲚᲘ, ᲒᲕᲐᲠᲘ, ᲔᲚᲤᲝᲡᲢᲐ, github…"
             />
             <button class="btn ghost" id="clear" type="button">
-              გასუფთავება
+              ᲒᲐᲡᲣᲤᲗᲐᲕᲔᲑᲐ
             </button>
           </label>
-          <button class="btn" id="copyCsv" type="button">CSV ექსპორტი</button>
+          <button class="btn" id="copyCsv" type="button">CSV ᲔᲥᲡᲞᲝᲠᲢᲘ</button>
         </div>
 
         <!-- Cards (dynamic) -->
@@ -54,10 +56,10 @@
       <div class="container">
         <div class="foot">
           <span
-            >© <span id="y"></span> საზაფხულო სკოლა — პორტფოლიოების
-            სარჩევი</span
+            >© <span id="y"></span> ᲡᲐᲖᲐᲤᲮᲣᲚᲝ ᲡᲙᲝᲚᲐ — ᲛᲝᲜᲐᲬᲘᲚᲔᲗᲐ ᲞᲝᲠᲢᲤᲝᲚᲘᲝᲔᲑᲘს
+            ᲡᲐᲠᲩᲔᲕᲘ</span
           >
-          <span class="muted">განახლდა: <span id="lm"></span></span>
+          <span class="muted">ᲒᲐᲜᲐᲮᲚᲓᲐ: <span id="lm"></span></span>
         </div>
       </div>
     </footer>
@@ -139,7 +141,7 @@
         const gh = item.github || "#";
         const qr = qrUrl(url);
         const emailSafe = item.email || "";
-        const tags = item.tags || "ვებ";
+        const tags = item.tags || "ᲕᲔᲑ";
         const el = document.createElement("article");
         el.className = "card";
         el.dataset.name = item.name || "";
@@ -147,17 +149,17 @@
         el.dataset.github = gh;
         el.innerHTML = `
         <div class="title">
-          <span class="name">${item.name || "სახელი"}</span>
+          <span class="name">${item.name || "ᲡᲐᲮᲔᲚᲘ"}</span>
           <span class="badge">${tags}</span>
         </div>
         <div class="meta">✉️ ${emailSafe}</div>
         <div class="actions">
-          <a class="btn" href="${url}" target="_blank" rel="noopener">ნახე საიტი</a>
+          <a class="btn" href="${url}" target="_blank" rel="noopener">ᲜᲐᲮᲔ ᲡᲐᲘᲢᲘ</a>
           <a class="btn ghost" href="${gh}" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="qr">
           <img loading="lazy" src="${qr}" alt="QR კოდი — ${item.name}">
-          <small>სკანირე QR და გადადი საიტზე.</small>
+          <small>ᲓᲐᲐᲠᲔᲡᲙᲐᲜᲘᲠᲔ QR ᲓᲐ ᲒᲐᲓᲐᲓᲘ ᲡᲐᲘᲢᲖᲔ.</small>
         </div>
       `;
         return el;
@@ -209,7 +211,7 @@
 
         // CSV ექსპორტი — ხილული ბარათები
         document.getElementById("copyCsv").addEventListener("click", () => {
-          const rows = [["სახელი", "ელფოსტა", "საიტი", "GitHub"]];
+          const rows = [["ᲡᲐᲮᲔᲚᲘ", "ᲔᲚᲤᲝᲡᲢᲐ", "ᲡᲐᲘᲢᲘ", "GitHub"]];
           document.querySelectorAll("#list .card:not(.hidden)").forEach((c) => {
             const name = c.dataset.name || "";
             const email = c.dataset.email || "";
@@ -225,7 +227,7 @@
           navigator.clipboard
             .writeText(csv)
             .then(() => {
-              alert("CSV დაკოპირდა კლიპბორდში.");
+              alert("CSV ᲓᲐᲙᲝᲞᲘᲠᲓᲐ ᲙᲚᲘᲞᲑᲝᲠᲓᲨᲘ.");
             })
             .catch(() => {
               // fallback: ჩამოტვირთვა ფაილად
