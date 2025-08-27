@@ -175,7 +175,7 @@
           name: "სანდრო ცეცხლაძე",
           email: "sandro467@din.ge",
           url: "https://avtotrainer.github.io/sandro",
-          github: "https://github.com/avtotrainer/niko",
+          github: "https://github.com/avtotrainer/sandro",
           tags: "მორიდებული · Bash",
         },
         {
@@ -242,7 +242,9 @@
       // სცადე JSON ჩატვირთვა; გათიშვის შემთხვევაში — BUILTIN
       async function boot() {
         try {
-          const res = await fetch("./sites.json", { cache: "no-store" });
+          const res = await fetch("./assets/json/sites.json", {
+            cache: "no-store",
+          });
           if (!res.ok) throw new Error("no json");
           const json = await res.json();
           if (!Array.isArray(json)) throw new Error("bad format");
